@@ -39,11 +39,11 @@ IMPORTANT: Entire response must be in the language with ISO code: ${options.lang
         apiKey: process.env.OPENAI_API_KEY,
         apiOrg: process.env.OPENAI_API_ORG ?? undefined,
         debug: options.debug,
-        maxModelTokens: openaiOptions.tokenLimits.maxTokens,
-        maxResponseTokens: openaiOptions.tokenLimits.responseTokens,
+        maxModelTokens: 128000,
+        maxResponseTokens: 16000,
         completionParams: {
           temperature: options.openaiModelTemperature,
-          model: openaiOptions.model
+          model: 'gpt-4o-mini'
         }
       })
     } else {
